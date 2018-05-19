@@ -1,0 +1,26 @@
+ 
+  我这里maven是在E:\apache-maven-3.3.9
+
+  首先下载maven 
+  
+    1.新建MAVEN_HOME环境变量 ：这个就是maven所存储的地址
+
+    2.在Path环境变量后面添加：;%MAVEN_HOME%\bin
+
+    3.cmd命令  mvn -v 或者  mvn -version  查看maven是否配置成功。
+   
+    4.配置maven仓库：
+      找到maven的文件夹，在maven的conf文件夹下有个settings.xml文件
+       <localRepository>E:/apache-maven-3.3.9/repository</localRepository> 
+       这里就说指定仓库为maven下的repository文件夹；
+
+    5.myeclipse中设置maven的路径 
+       打开Myeclipse, 进入window-preference-myeclipse-maven4myeclipse-maven
+       找到Installations 点击add，找到maven的所在文件夹 E:\apache-maven-3.3.9
+       找到User Settings   路径改为E:\apache-maven-3.3.9\conf\settings.xml
+
+       
+   
+
+
+ 
