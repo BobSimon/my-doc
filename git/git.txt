@@ -1,0 +1,129 @@
+
+###############################################先前的配置操作###################################
+########前提是没有配置好的情况下
+#配置用户名
+
+git config --global user.name "Bob Simon"
+
+#####查看配置的用户名
+git config --global user.name
+
+##配置邮箱
+
+git config --global user.email "8439@qq.com"
+
+#####查看配置的邮箱
+git config --global user.email
+
+
+
+git log  查看日志信息
+
+################在gitlab上创建新的仓库（create new repository）###############
+###############这是没有绑定本地项目git的情况下
+##克隆gitlab上的新建的项目
+####检出仓库 
+git clone git@gitlab.workics.cn:Simon/redis-study.git
+
+##来到当前的这个新建的项目的文件夹下
+
+cd redis-study
+
+##拿一个README.md文件
+
+touch README.md
+
+##添加拿过来的文件
+
+git add README.md
+
+##提交这个文件
+
+git commit -m "add README"
+
+##助推这个文件到gitlab的这个项目中,origin表示本地的master文件夹下
+
+git push -u origin master
+
+
+
+
+###########存在的文件夹（existing folder）###########
+##在本地已经存在的git项目，引入到gitLab中
+###来到这个文件夹下，这是表示来到我的文件下
+
+cd f://idea_pro/nr
+
+#####初始化
+
+git init #######这不可以操作，因为在本机上已经存在git项目
+
+####发送到远程的gitlab（就是网络中的gitlab）
+###添加本地到远程仓库
+#设置远程仓库地址
+
+git remote add origin git@gitlab.workics.cn:Simon/redis-study.git
+
+####添加该所有的文件到远程的gitlab或说把本机中的文件复制到远程的仓库中
+# 将所有修改过的工作文件提交暂存区
+git add .
+
+git@gitlab.workics.cn:backend/my-pro.git
+
+#####确认初始化的
+
+git commit -m "Initial commit"
+
+####助推到远程的gitlab的master目录下
+##将本地主分支推到远程(如无远程主分支则创建，用于初始化远程仓库)
+###也可以说是客户端首次提交（客户端首次提交）
+git push -u origin master
+
+
+shift zz 就是退出这个命令窗口。。。
+
+
+####################把别人得代码拷下来#################################
+ 场景是我要把gitlab上一个别人的项目folk下来，然后再本机的IDEA环境中打开该项目
+   操作如下：
+    先在gitlab中folk下，把代码弄到我的gitlab空间，
+    然后再bash.exe中，创建一个本机的盘符地址,mkdir 一个文件夹，就是在本机某个盘处
+    创建一个文件夹，然后  git clone SSH地址就行。这就把代码弄下来，然后在IDEA中
+    打开这个工程就行了。。
+
+
+======================================
+如果本机的一个项目已经存在了git，但是你想重新连接一个git仓库
+，这个时候就需要把git删掉
+rm -rf .git
+
+=================
+这是表示在README.md文件中写入"this is test"
+echo "this is test" >> README.md
+
+
+---------
+ 修改了远程仓库的代码，也就是说修改了gitlab上的代码，
+ 但是在我们的IDEA中没有修改代码，
+ 我们可以这样把远程仓库的代码
+
+===================
+当本地代码和远程仓库代码不一致的时候，也就是说远程代码比本地代码更齐全的时候
+可以用这个命令
+git pull origin master（从远程仓库拉代码，这指的是master分支，这就ok了）
+
+
+
+
+git@gitlab.workics.cn:backend/workics-data.git
+
+{"userID":"bob","asin":"B123"}
+
+{ "userID":666,
+  
+  "info":{"price":...}
+ }
+
+
+
+

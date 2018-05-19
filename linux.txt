@@ -1,0 +1,204 @@
+
+linux命令：
+
+ ls 查看当前目录下的文件；
+
+ cd temp 进入该文件夹；
+
+ cd ..返回上一级；
+
+ cd /usr/temp  表示查看usr下的temp文件；
+ 
+ tac settings.xml 这个是从后面到前面看文件的内容；
+
+ cat settings.xml 这个是从前面到后面看文件的内容（不会加上行号的）；
+
+ cat -n settings.xml  会在文件每行内容前加上行号的；
+
+ mkdir bob 创建一个名字为bob的目录
+
+ touch bob.txt创建一个名为bob的文件，并且是个空文件。
+
+ rm bob.txt 删除bob.txt 这个文件
+
+ rm -rf apache-tomcat-8.5.24 删除整个文件夹，这个问价夹中有内容的哦
+
+ rmdir bob  删除这个空目录
+
+ whoami显示用户自身的用户名
+
+ who当前用户的在线情况
+
+ w用于显示登录到系统的用户情况
+
+ ifconfig -a 显示产看当前机器的IP、Netmask、Gateway等网络信息
+
+ tar zxvf apache-tomcat-6.0.36.tar.gz 解压文件
+  
+ netstat -tln 查找所有开启的端口号
+ 
+ ps -ef | grep tomcat 查看tomcat进行情况
+
+ ./startup.sh 启动tomcat的命令
+
+ ./shutdown.sh 关闭tomcat的命令
+
+ file logo.png 可以查看该图片的像素和大小或者说属性
+
+ sudo ./startup.sh  启动tomcat
+ 
+************************************************************************
+ scp amzics-v2.0.war master@192.168.1.214:/usr/local/tomcat-8.5.24/webapps  
+  其中amzics-v2.0.war是本机文件，master是账户名，后面是IP地址加上文件路径
+  功能是从windows中传输文件到linux
+  
+  tar xvf jdk-7u75-linux-x64.tar.gz  解压某个文件夹
+
+  su master@192.168.1.214  切换到master账户
+
+  scp anZhi.war master@192.168.1.214:/usr/local/tomcat-8.5.24/webapps  
+ 从本机上传anZhi这个文件夹到linux环境当中,导入文件夹的时候要加上-r,
+ 如果是压缩包就不用了。
+
+ su root切换到root账户，会提示你输入密码
+
+ find / 就是找根目录下所有的文件
+
+ pwd 查看当前文件的路径
+
+ date 显示当前的时间
+
+ cal 2018 显示2018年的日历表
+
+ cat /proc/version查看linux版本信息
+
+ cat /proc/cpuinfo 查看cpu信息
+ 
+ cat /proc/meminfo 校验内存使用
+
+ date 041217002007.00 设置日期和时间：-月日时分年.秒
+ 
+ clock -w 将时间保存到BLOS
+  
+ shutdown -h now 关闭系统（1）
+
+ shutdown -r now 重启（1）
+
+ reboot 重启（2）
+
+ logout注销
+
+ 
+ 
+****************************************************************
+ 利用vi或者vim编辑文件
+  vi server.xml 或者用 vim server.xml 
+  然后按下insert键，然后找到你要修改的地方
+  按下ESC键,然后写上英文的:wq表示保存并退出 
+  当然按下ESC,输入英文字符:q!表示强制退出，忽略所有的更改
+  出现以上场景也是因为我是master账户，没有权限去操作或说查看一些文件，
+ 这时候就需要去切换到比较高权限的用户
+  前端代码的生成是利用nodejs，查看nodejs的版本用 node -v
+  在anZhi文件下跑 npm install，不能有报错
+  在生成文件后，再跑命令npm run dist,可以看到在anZhi文件夹下
+
+**************************************************************
+在linux环境下编写shell脚本
+ 进入到一个文件当中：
+ vim helloWorld
+ 按住insert键盘或者在键盘上按下i键，
+ 这样就可以在里面写自己的代码了，或说编写shell脚本了
+ 比如写上打印 hello world
+ echo "hello world"
+ exit 0
+  那么怎么退出保存呢
+  按下ESC键盘，写上冒号，写上wq 回车结束，这就是所谓的保存并退出；
+  那怎么运行这个这个脚本呢 bash helloWorld，这样就ok了，但是如果你想
+  ./helloWorld，那就必须赋予权限去执行这个文件，
+  chmod  u+x helloWorld
+  其中u代表文件的所有者，+代表添加后面的权限，x代表可执行权限
+  
+ 
+  编写shell命令的规范，一般是要在文件的开头写上
+  #/bin/bash      这就是表示为shell脚本，在这里面#是注释的命令
+   以下是一串shell命令：
+     mkdir file   #创建一个文件夹
+     cd files      ##进入该文件夹
+     for((i=0;i<100;i++));do  ##创建一百个doc文件 
+        touch file$i.doc    
+     done
+
+
+    ###计算1到100的结果
+      for((i=1;i<=100;i++));do
+        let sum+=$i   ##shell计算中要使用let
+        done
+        echo "打印的结果为"$sum    ###打印结果
+        exit 0    ##退出当前的编辑状态
+
+  
+****************************************************************************
+cp -rf Downloads/anZhi Music/BobSimon
+ 当然了这里的Downloads文件夹和Music是在同一个文件夹下，把anZhi文件复制到BobSimon文件夹下
+
+**************************jdk的配置**********************************************
+下载jdk的jdk-7u75-linux-x64.tar.gz这表示是在windows下面的文件夹；
+ scp -r jdk-7u75-linux-x64.tar.gz root@192.168.1.214:/usr/local/java
+ cd usr/local/java; 进入到该文件夹下
+ tar xvf jdk-7u75-linux-x64.tar.gz --解压该文件
+ cat ~/.bashrc  -- 查看改文件；
+ vi ~/.bashrc   --编辑改文件
+
+insert按键，在~/.bashrc 文件的后面加上
+export JAVA_HOME=/usr/local/software/jdk1.8.0_161   -- 这些指向的都是我们安装的java的路径
+export JRE_HOME=/usr/local/software/jdk1.8.0_161/jre
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+ 
+然后呢写命令：
+source ~/.bashrc
+有可能JDK的配置木有成功，可以输入java -version ;查看有木有安装java或者JDK成功！
+
+**************************************************************************************
+ netstat -ant   查看所有的进程
+
+
+*************************************************************
+linux下安装rabbitmq:
+
+首先：安装GCC GCC-C++ Openssl等模块,安装过就不需要安装了
+  yum -y install make gcc gcc-c++ kernel-devel m4 ncurses-devel openssl-devel  
+
+其次：安装ncurses
+   yum -y install ncurses-devel  
+
+安装erlang环境：
+ wget http://erlang.org/download/otp_src_18.2.1.tar.gz  
+ 
+ 下载 otp_src_18.2.1.tar.gz到当前目录；
+
+ rm -rf otp_src_18.2.1.tar.gz  删除这个压缩包；
+
+ cp -r otp_src_18.2.1.tar.gz /usr/local/software  
+  这是说要把otp_src_18.2.1.tar.gz移动到这个（/usr/local/software）目录下
+
+ tar xvfz otp_src_18.2.1.tar.gz  解压文件；
+ 
+ cd otp_src_18.2.1  进入这个文件夹；
+ 
+ ./configure  运行这个；
+
+ make install；开始安装；
+ 
+
+
+scp -r jdk-7u75-linux-x64.tar.gz root@192.168.1.214:/usr/local/java
+usr/local/tomcat/apache-tomcat-8.5.24/webapps
+
+usr/local/software/jdk1.8.0_161/
+
+apache-tomcat-8.5.29
+
+nginx nginx-1.1.10
+
+
