@@ -10,7 +10,7 @@ tomcat站点更新时，会需要重启,而有的项目重启过程可能需要�
 
 **2.下载解压到目录,jdk放到java目录，tomcat放到tomcat8-01,复制一份到tocat8-02**
 
-![1下载解压jdk](/uploads/1c92279d7537bf323a915f6ab6a98141/1下载解压jdk.png)
+![1下载解压jdk](/1下载解压jdk.png)
 
 
 **3.修改系统环境变量：vi /etc/profile,下最后追加配置**
@@ -30,7 +30,7 @@ export CATALINA_2_HOME=/usr/local/src/tomcat8-02
 export TOMCAT_HOME=/usr/local/src/tomcat8-01
 export TOMCAT_2_HOME=/usr/local/src/tomcat8-02
 `
-![修改profile](/uploads/c9efc4d3de94ed74d3c2637fd538e5bb/修改profile.png)
+![修改profile](/修改profile.png)
 
 
 **4.修改Tomcat实例的端口：**
