@@ -7,7 +7,7 @@
 
 **2.针对至爱商城项目，研究分析。**
 
-2.1，单台服务器站点端口通过Nginx配置代理到其他实例站点的端口，具体单台服务运行Tomcat多实例参考：https://git.3weijia.com/jiangjun316/zaShop/wikis/tomcat%E9%85%8D%E7%BD%AE%E5%A4%9A%E5%AE%9E%E4%BE%8B%E8%BF%90%E8%A1%8C
+2.1，单台服务器站点端口通过Nginx配置代理到其他实例站点的端口，具体单台服务运行Tomcat多实例参考：https://github.com/BobSimon/my-doc/blob/master/tomcat%E9%85%8D%E7%BD%AE%E5%A4%9A%E5%AE%9E%E4%BE%8B.md
 
 2.2，当需要更新时，先将集群中的一个Tomcat实例隔离出来。用这个实例来更新需要发布的版本，更新完成后，再将该站点加入集群，同时将其他站点隔离出来。隔离出来的集群同步更新后，再加入到集群中。
 
