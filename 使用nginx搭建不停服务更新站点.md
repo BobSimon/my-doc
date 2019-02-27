@@ -1,7 +1,7 @@
 利用Nginx搭建集群环境，通过部署多实例站点，快速切换nginx代理的站点来实现。
 
 **1.Nginx集群环境示例图：**
-![nginx集群图片1](/uploads/72f3fd24a6dfb751e8960beb6b1c4fda/nginx集群图片1.png)
+![nginx集群图片1](/nginx集群图片1.png)
 
 
 
