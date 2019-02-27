@@ -16,7 +16,7 @@
 
 3.1， 在Nginx官网（http://nginx.org/en/download.html）   下载最新的稳定版本。修改配置文件，
 3.5配置：
-![3.5服务器Nginx配置](/uploads/7e448df884576717911625a4fb60c1ea/3.5服务器Nginx配置.png)
+![3.5服务器Nginx配置](/3.5服务器Nginx配置.png)
 
 3.2， 配置说明
 
